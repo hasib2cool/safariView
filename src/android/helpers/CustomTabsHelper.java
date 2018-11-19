@@ -74,7 +74,10 @@ public class CustomTabsHelper {
 
         // Get all apps that can handle VIEW intents.
         List<ResolveInfo> resolvedActivityList = pm.queryIntentActivities(activityIntent, PackageManager.MATCH_ALL);
-        List<String> packagesSupportingCustomTabs = new ArrayList<>();
+       // List<String> packagesSupportingCustomTabs = new ArrayList<>();
+
+        List<packagesSupportingCustomTabs> list = new ArrayList<packagesSupportingCustomTabs>();
+
         for (ResolveInfo info : resolvedActivityList) {
             if (info.activityInfo.packageName.equals("com.android.chrome")) {
                 Intent serviceIntent = new Intent();
